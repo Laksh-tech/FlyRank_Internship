@@ -1,10 +1,13 @@
 # .
 # ├── app/
+# |   |
 # │   ├── __init__.py
+# |   ├── auth.py           # 
 # │   ├── database.py       # PostgreSQL pool connection
 # │   ├── main.py           # FastAPI routes (unchanged logic)
 # │   ├── repository.py     # Postgres task repository (swapped in)
-# │   └── schemas.py        # Pydantic models
+# │   ├── schemas.py        # Pydantic models
+# |   ├──
 # ├── .env                  # Connection details (gitignored)
 # ├── .env.example          # Sample environment variables (committed)
 # ├── init.sql              # Database schema setup
@@ -14,3 +17,11 @@ fastapi
 uvicorn
 pydantic
 psycopg2-binary
+fastapi
+uvicorn
+pydantic
+pydantic[email]
+psycopg2-binary
+supabase
+python-dotenv
+ 
