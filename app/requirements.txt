@@ -1,0 +1,16 @@
+# .
+# ├── app/
+# │   ├── __init__.py
+# │   ├── database.py       # PostgreSQL pool connection
+# │   ├── main.py           # FastAPI routes (unchanged logic)
+# │   ├── repository.py     # Postgres task repository (swapped in)
+# │   └── schemas.py        # Pydantic models
+# ├── .env                  # Connection details (gitignored)
+# ├── .env.example          # Sample environment variables (committed)
+# ├── init.sql              # Database schema setup
+# ├── Dockerfile            # Container definition for FastAPI
+# └── docker-compose.yml    # Runs FastAPI + PostgreSQL together
+fastapi
+uvicorn
+pydantic
+psycopg2-binary
