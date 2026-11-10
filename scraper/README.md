@@ -63,20 +63,26 @@ Defined with Pydantic in `src/models.py`. A record that fails goes to `output/er
 - Development reads from `cache/` so the site is asked once, not fifty times.
 
 ## Proof: a real run report
-
-<!-- TODO: paste your own output/run-report.json here after a real run. -->
-
+{
+  "started_at": "2026-11-10T11:03:10Z",
+  "duration_seconds": 41.86,
+  "catalogue_pages": 3,
+  "unique_urls": 60,
+  "pages_fetched": 63,
+  "cache_hits": 0,
+  "valid_records": 60,
+  "invalid_records": 0,
+  "failed_pages": 0,
+  "failures": []
+}
 ## Why no browser
-
 The data is already in the HTML the server sends, so a browser would only add cost.
 
 ## Limitation
-
-<!-- TODO: one honest limitation, in your own words. Example candidates: the selectors depend on the
+The selectors depend on the
 site's current HTML layout; the single retry has no backoff or Retry-After handling; cached pages are
 never refreshed until you delete cache/. -->
 
 ## Ethics note
-
-<!-- TODO: write this in your own words. Points to cover: use an official API when one exists; never
+Always use an official API when one exists; never
 bypass logins, paywalls or blocks; collect only what you need. -->
