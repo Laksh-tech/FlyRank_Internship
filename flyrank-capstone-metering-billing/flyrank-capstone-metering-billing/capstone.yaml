@@ -1,0 +1,32 @@
+name: usage-metering-billing-engine
+track: backend
+language: python
+
+run: python -m app.main
+seed: python -m app.seed
+test: python -m pytest -q
+base_url: http://localhost:8080
+
+# Demo API keys created by the seed step (throwaway values, not secrets)
+auth:
+  header: X-API-Key
+  demo_keys:
+    - demo-key-alpha
+    - demo-key-beta
+
+endpoints:
+  - method: GET
+    path: /health
+  - method: POST
+    path: /generate
+    headers: [X-API-Key, Idempotency-Key]
+    body: '{"prompt": "hello", "usage": {"input_tokens": 100, "cached_input_tokens": 0, "output_tokens": 2500, "reasoning_tokens": 0}}'
+  - method: GET
+    path: /usage
+    headers: [X-API-Key]
+  - method: POST
+    path: /billing/checkout
+    headers: [X-API-Key]
+  - method: POST
+    path: /webhooks/stripe
+    headers: [Stripe-Signature]

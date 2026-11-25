@@ -1,0 +1,4 @@
+starlette>=0.37
+uvicorn>=0.30
+python-dotenv>=1.0
+pytest>=8.0
